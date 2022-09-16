@@ -16,8 +16,8 @@ public class SigninActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        getSupportActionBar().hide();  ẩn ActionBar
         setContentView(R.layout.activity_signin);
-
         EditText email = findViewById(R.id.SignIn_Email);
         EditText pass = findViewById(R.id.SignIn_Password);
         Button signin =  findViewById(R.id.btnSignIn);
