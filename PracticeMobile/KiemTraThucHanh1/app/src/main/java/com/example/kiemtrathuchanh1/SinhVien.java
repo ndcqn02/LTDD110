@@ -1,11 +1,13 @@
 package com.example.kiemtrathuchanh1;
 
-public class SinhVien {
+import java.io.Serializable;
+
+public class SinhVien implements Serializable {
     private String ten;
     private String msv;
     private String quequan;
 
-    public SinhVien(String ten, String msv, String quequan) {
+    public SinhVien(String ten, String msv, String quequan)  {
         this.ten = ten;
         this.msv = msv;
         this.quequan = quequan;
