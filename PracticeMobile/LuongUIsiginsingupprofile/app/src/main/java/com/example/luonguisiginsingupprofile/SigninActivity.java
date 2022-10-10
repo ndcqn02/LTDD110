@@ -2,34 +2,52 @@ package com.example.luonguisiginsingupprofile;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class SigninActivity extends AppCompatActivity  {
+public class SigninActivity extends AppCompatActivity {
+
+    EditText username, password;
+    Button btnSignin;
+    DBHelper DB;
+    TextView notHaveAccount;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        getSupportActionBar().hide();  ẩn ActionBar
         setContentView(R.layout.activity_signin);
-        EditText email = findViewById(R.id.SignIn_Email);
-        EditText pass = findViewById(R.id.SignIn_Password);
-        Button signin =  findViewById(R.id.btnSignIn);
-        TextView notHaveAccount = findViewById(R.id.tv_NotHaveAcc);
 
+        username = (EditText) findViewById(R.id.SignIn_Email);
+        password = (EditText) findViewById(R.id.SignIn_Password);
+        btnSignin = (Button) findViewById(R.id.btnSignIn);
+        notHaveAccount = findViewById(R.id.tv_NotHaveAcc);
+        DB = new DBHelper(this);
 
-        signin.setOnClickListener(new View.OnClickListener() {
+        btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(email.getText().toString().equals("admin")  && pass.getText().toString().equals("admin")){
-                    Intent intent = new Intent(SigninActivity.this, ProfileActivity.class);
-                    startActivity(intent);
+                String user = username.getText().toString();
+                String pass = password.getText().toString();
+
+                if (user.equals("") || pass.equals(""))
+                    Toast.makeText(SigninActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                else {
+                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
+                    if (checkuserpass == true) {
+                        Toast.makeText(SigninActivity.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), SubActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(SigninActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -38,14 +56,12 @@ public class SigninActivity extends AppCompatActivity  {
         notHaveAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentAcc = new Intent(SigninActivity.this, signupActivity.class);
-                startActivity(intentAcc);
+                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                startActivity(intent);
+
             }
         });
     }
-
-
-
 
 
 }
