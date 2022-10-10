@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Junior/Mobile/PracticeMobile/ListView/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.298" />
         <entry key="..\:/Junior/Mobile/PracticeMobile/ListView/app/src/main/res/layout/activity_main.xml" value="0.2942708333333333" />
         <entry key="..\:/Junior/Mobile/PracticeMobile/ListView/app/src/main/res/layout/activity_trai_cay.xml" value="0.2942708333333333" />
         <entry key="..\:/Junior/Mobile/PracticeMobile/ListView/app/src/main/res/layout/dong_trai_cay.xml" value="0.29322916666666665" />
