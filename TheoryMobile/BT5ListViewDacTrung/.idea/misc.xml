@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Junior/Mobile/TheoryMobile/BT5ListViewDacTrung/app/src/main/res/drawable/round_outline.xml" value="0.2455" />
         <entry key="..\:/Junior/Mobile/TheoryMobile/BT5ListViewDacTrung/app/src/main/res/layout/activity_main.xml" value="0.2942708333333333" />
         <entry key="..\:/Junior/Mobile/TheoryMobile/BT5ListViewDacTrung/app/src/main/res/layout/mucdobanbe.xml" value="0.29322916666666665" />
+        <entry key="..\:/Junior/Mobile/TheoryMobile/BT5ListViewDacTrung/app/src/main/res/xml/round_outline.xml" value="0.219921875" />
       </map>
     </option>
   </component>
