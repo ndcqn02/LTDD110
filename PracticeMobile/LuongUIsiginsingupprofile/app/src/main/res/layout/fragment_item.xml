@@ -4,46 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItemFragment">
+    tools:context=".ItemFragment"
+    android:layout_margin="10dp">
 
+
+    <ImageView
+        android:id="@+id/backHomeFragment"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_arrow_back24" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="410dp"
-        android:layout_height="250dp"
+        android:layout_width="390dp"
+        android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
-
-       >
-
+        android:layout_marginTop="50dp">
 
         <ImageView
             android:id="@+id/imgItemHinh"
-            android:layout_width="410dp"
-            android:layout_height="250dp"
+            android:layout_width="390dp"
+            android:layout_height="200dp"
             android:scaleType="fitXY" />
-
-        <ImageView
-            android:id="@+id/backHomeFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="center"
-            android:src="@drawable/icon_left_arrow" />
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/txtItemName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:text="day la man hinh item fragment"
-        android:textSize="30dp" />
 
-    <TextView
-        android:id="@+id/txtItemMoTa"
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="440dp"
-        android:text="Mo ta thong tin item"
-        android:textSize="20dp" />
+        android:layout_marginTop="250dp"
+        android:padding="20dp"
+        app:cardCornerRadius="10dp"
+        >
+        <TextView
+            android:id="@+id/txtItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="day la man hinh item fragment"
+            android:textStyle="bold"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/txtItemMoTa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Mo ta thong tin item Di hoc  fafddffffasfsffsfds"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtItemMoTaThem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:text="Thủ khoa ngành Răng Hàm Mặt - Một tân sinh viên nổi bật khác chính là bạn"
+            android:textSize="20dp" />
+
+    </androidx.cardview.widget.CardView>
+
 
 
 </FrameLayout>

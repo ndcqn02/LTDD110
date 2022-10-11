@@ -49,13 +49,15 @@
         android:layout_below="@+id/texviewMoTa"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="0dp"
-        android:text="Name" />
+        android:drawableRight="@drawable/icon_star"
+        android:text="4.7"
+        android:textSize="18dp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/texviewTen"
-        android:layout_marginLeft="360dp"
+        android:layout_marginLeft="350dp"
         android:scaleType="center"
         android:src="@drawable/like_icon" />
 

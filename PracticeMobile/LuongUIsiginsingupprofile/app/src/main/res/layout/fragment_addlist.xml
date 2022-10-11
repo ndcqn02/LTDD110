@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddListFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Add List Friend"
+        android:textColor="#161c2c"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <EditText
+        android:id="@+id/edtAddItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/custom_edittext"
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:hint="Nhập tên"
+        android:textColor="#3A3B3C"/>
+
+    <EditText
+        android:id="@+id/edtAddItemImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:background="@drawable/custom_edittext"
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:hint="Nhập link ảnh"
+        android:textColor="#3A3B3C "/>
+
+    <EditText
+        android:id="@+id/edtAdditemDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/custom_edittext"
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:hint="Mô tả"
+        android:textColor="#3A3B3C "/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="350dp"
+        android:background="@drawable/custom_size"
+        android:text="Add item"
+        android:textAllCaps="false"
+        android:textSize="17dp" />
+
+</FrameLayout>

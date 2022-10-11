@@ -108,7 +108,7 @@ public class SubActivity extends AppCompatActivity {
                     //set fragment
                     getSupportFragmentManager().beginTransaction()
                             .setReorderingAllowed(true)
-                            .replace(R.id.fragmentContainer, LikeFragment.class, null)
+                            .replace(R.id.fragmentContainer, AddListFragment.class, null)
                             .commit();
 
                     homeTxt.setVisibility(View.GONE);
