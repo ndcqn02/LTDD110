@@ -76,22 +76,29 @@ public class MainActivity extends AppCompatActivity {
         listBook.add( new Book(R.drawable.anh1,"Sach Thau Tom Tam Ly 10" ));
         listBook.add( new Book(R.drawable.anh1,"Sach Thau Tom Tam Ly 11" ));
 
-        ArrayList<DataShop> arrayList = new ArrayList<>();
-        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
+
+        List<Book> listBook2 = new ArrayList<>();
+        listBook2.add( new Book(R.drawable.anh1,"Sach Thau Tom Tam Ly 1" ));
+        listBook2.add( new Book(R.drawable.anh1,"Sach Thau Tom Tam Ly 2" ));
+        listBook2.add( new Book(R.drawable.anh1,"Sach Thau Tom Tam Ly 3" ));
+        listBook2.add( new Book(R.drawable.anh1,"Sach Thau Tom Tam Ly 4" ));
+
+        List<DataShop> listDataShop = new ArrayList<>();
+        listDataShop.add(new DataShop(R.drawable.imagegirl,"anh dep"));
+        listDataShop.add(new DataShop(R.drawable.imagegirl,"anh dep"));
+        listDataShop.add(new DataShop(R.drawable.imagegirl,"anh dep"));
+        listDataShop.add(new DataShop(R.drawable.imagegirl,"anh dep"));
+        listDataShop.add(new DataShop(R.drawable.imagegirl,"anh dep"));
+        listDataShop.add(new DataShop(R.drawable.imagegirl,"anh dep"));
+        listDataShop.add(new DataShop(R.drawable.imagegirl,"anh dep"));
+        listDataShop.add(new DataShop(R.drawable.imagegirl,"anh dep"));
+        listDataShop.add(new DataShop(R.drawable.imagegirl,"anh dep"));
 
         listCategory.add(new Category("Category1", listBook));
         listCategory.add(new Category("Category2", listBook));
         listCategory.add(new Category("Category3", listBook));
-        listCategory.add(new Category("Category4", listBook));
 
+//        listCategory.add(new Category("Category4", listDataShop));
 
 
 

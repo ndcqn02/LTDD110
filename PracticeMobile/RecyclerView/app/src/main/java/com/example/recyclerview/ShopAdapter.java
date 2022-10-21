@@ -17,12 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder>{
-    List<DataShop> dataShops;
-    Context context;
+    private List<DataShop> dataShops;
 
-    public ShopAdapter(List<DataShop> dataShops) {
+    public void setData(List<DataShop> dataShops){
         this.dataShops = dataShops;
+        notifyDataSetChanged();
     }
+
 
     @NonNull
     @Override
@@ -34,6 +35,10 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        DataShop shop = dataShops.get(position);
+        if(shop == null)
+            return;
+
         holder.txtName.setText(dataShops.get(position).getTen());
         holder.imgHinh.setImageResource(dataShops.get(position).getHinhAnh());
 
@@ -41,7 +46,9 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return dataShops.size();
+        if (dataShops != null)
+            return dataShops.size();
+        return 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
