@@ -3,6 +3,7 @@ package com.example.reference;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +12,7 @@ import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.media.AudioRecord;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 
 public class MainContactsActivity extends AppCompatActivity {
     RecyclerView rcvContact;
+    ContactsAdapter adapter;
     ArrayList<Contacts> arrayList = new ArrayList<>();
 
     @Override
@@ -38,18 +41,20 @@ public class MainContactsActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rcvContact.setLayoutManager(linearLayoutManager);
 
+        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        rcvContact.addItemDecoration(itemDecoration);  // them duong gach phan chia cac item
 
         getPhoneContacts();
-        
-        ContactsAdapter adapter = new ContactsAdapter(arrayList , getApplicationContext());
+
+        ContactsAdapter adapter = new ContactsAdapter(arrayList , this);
         rcvContact.setAdapter(adapter);
 
     }
 
 
+
+
     public ArrayList<Contacts> getPhoneContacts(){
-
-
 
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
                 != PackageManager.PERMISSION_GRANTED){
@@ -73,5 +78,11 @@ public class MainContactsActivity extends AppCompatActivity {
         return arrayList;
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if( adapter!= null){
+            adapter.Release();  //giai phong bien moi truong
+        }
+    }
 }
