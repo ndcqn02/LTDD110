@@ -26,38 +26,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initView(){
-//        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-//        recyclerView.setHasFixedSize(true); // toi uu hoa du lieu khong bi anh boi noi dung trong adapter
+        RecyclerView recyclerView = findViewById(R.id.rcv_Category);
+        recyclerView.setHasFixedSize(true); // toi uu hoa du lieu khong bi anh boi noi dung trong adapter
 
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//        ArrayList<DataShop> arrayList = new ArrayList<>();
-//        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-//        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-//        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-//        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-//        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-//        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-//        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-//        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
-//        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        ArrayList<DataShop> arrayList = new ArrayList<>();
+        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
+        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
+        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
+        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
+        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
+        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
+        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
+        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
+        arrayList.add(new DataShop(R.drawable.anh1,"anh dep"));
 
-//        ShopAdapter adapter = new ShopAdapter(arrayList,getApplicationContext());
-//        recyclerView.setAdapter(adapter);
+        ShopAdapter adapter = new ShopAdapter(arrayList,getApplicationContext());
+        recyclerView.setAdapter(adapter);
 
 
 
 
         ////////////////////
 
-        rcv_Category = findViewById(R.id.rcv_Category);
-        categoryAdapter = new CategoryAdapter(this.getApplicationContext());
-
-        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        rcv_Category.setLayoutManager(linearLayoutManager1);
-
-        categoryAdapter.setDaTa(getCategory());
-        rcv_Category.setAdapter(categoryAdapter);
+//        rcv_Category = findViewById(R.id.rcv_Category);
+//        categoryAdapter = new CategoryAdapter(this.getApplicationContext());
+//
+//        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+//        rcv_Category.setLayoutManager(linearLayoutManager1);
+//
+//        categoryAdapter.setDaTa(getCategory());
+//        rcv_Category.setAdapter(categoryAdapter);
     }
 
     private List<Category> getCategory(){

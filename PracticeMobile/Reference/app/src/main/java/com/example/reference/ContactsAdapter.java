@@ -1,5 +1,6 @@
 package com.example.reference;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +11,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
     private List<Contacts> list;
+    private Context context;
+
+    public ContactsAdapter(List<Contacts> list, Context context) {
+        this.list = list;
+        this.context = context;
+        notifyDataSetChanged();
+
+    }
+
     @NonNull
     @Override
     public ContactsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_contact, parent, false);
-
         return new ViewHolder(view);
     }
 
@@ -27,8 +37,8 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         Contacts contact = list.get(position);
         if (contact ==  null)
             return;
-        holder.nameContact.setText(contact.getName());
-        holder.numberContact.setText(contact.getNumbers());
+        holder.nameContact.setText(list.get(position).getName());
+        holder.numberContact.setText(list.get(position).getNumbers());
     }
 
     @Override

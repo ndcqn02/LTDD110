@@ -18,12 +18,12 @@ import java.util.List;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder>{
     private List<DataShop> dataShops;
+    private Context context;
 
-    public void setData(List<DataShop> dataShops){
+    public ShopAdapter(List<DataShop> dataShops, Context context) {
         this.dataShops = dataShops;
-        notifyDataSetChanged();
+        this.context = context;
     }
-
 
     @NonNull
     @Override
