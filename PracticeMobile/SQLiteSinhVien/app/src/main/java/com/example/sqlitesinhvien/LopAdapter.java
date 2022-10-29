@@ -58,9 +58,9 @@ public class LopAdapter extends  RecyclerView.Adapter<LopAdapter.ViewHolder>{
         private TextView tv_SiSo;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tv_MaLop.findViewById(R.id.tv_MaLop);
-            tv_TenLop.findViewById(R.id.tv_TenLop);
-            tv_SiSo.findViewById(R.id.tv_SiSo);
+            tv_MaLop = itemView.findViewById(R.id.tv_MaLop);
+            tv_TenLop= itemView.findViewById(R.id.tv_TenLop);
+            tv_SiSo= itemView.findViewById(R.id.tv_SiSo);
         }
     }
 

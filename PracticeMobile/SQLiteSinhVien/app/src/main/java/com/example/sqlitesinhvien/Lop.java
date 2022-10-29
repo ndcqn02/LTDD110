@@ -3,9 +3,9 @@ package com.example.sqlitesinhvien;
 public class Lop {
     private String malop;
     private String tenlop;
-    private int siso;
+    private String siso;
 
-    public Lop(String malop, String tenlop, int siso) {
+    public Lop(String malop, String tenlop, String siso) {
         this.malop = malop;
         this.tenlop = tenlop;
         this.siso = siso;
@@ -27,11 +27,11 @@ public class Lop {
         this.tenlop = tenlop;
     }
 
-    public int getSiso() {
+    public String getSiso() {
         return siso;
     }
 
-    public void setSiso(int siso) {
+    public void setSiso(String siso) {
         this.siso = siso;
     }
 }

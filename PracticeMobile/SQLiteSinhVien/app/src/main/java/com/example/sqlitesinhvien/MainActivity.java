@@ -16,11 +16,18 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView rcv_Lop;
+    private SQLiteDatabase database=null;
+    private RecyclerView rcv_Lop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        doDeleteDb();
+        doCreateDb();
+
+        doCreateTable();
+        doInsertRecord();
 
 
         initView();
@@ -28,24 +35,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        rcv_Lop.findViewById(R.id.rcv_Lop);
+        RecyclerView rcv_Lop = findViewById(R.id.rcv_Lop);
+        rcv_Lop.setHasFixedSize(true);
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rcv_Lop.setLayoutManager(linearLayoutManager);
         // them duong divider giua cac item
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         rcv_Lop.addItemDecoration(itemDecoration);
 
-        ArrayList<Lop> arrayList = loadalllop();
+        ArrayList<Lop> arrayList = new ArrayList<>();
+        arrayList = loadalllop();
+//        arrayList.add(new Lop("123", "Lap trinh di dong", "20"));
 
-        LopAdapter adapter = new LopAdapter(arrayList, this);
-        rcv_Lop.setAdapter(adapter);
+        Toast.makeText(this, arrayList.get(0).getTenlop(), Toast.LENGTH_LONG);
 
 
+//        LopAdapter adapter = new LopAdapter(arrayList, this);
+//        rcv_Lop.setAdapter(adapter);
 
     }
 
 
-    SQLiteDatabase database=null;
+
     public void doCreateDb()
     {
         database=openOrCreateDatabase(
@@ -106,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
         while(c.isAfterLast()==false)
         {
-            arrLop.add(new Lop(c.getString(0), c.getString(1), c.getInt(2)));
+            arrLop.add(new Lop(c.getString(0), c.getString(1), c.getString(2)));
             c.moveToNext();
         }
         c.close();
