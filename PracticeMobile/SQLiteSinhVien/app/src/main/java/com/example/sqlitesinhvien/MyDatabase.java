@@ -37,6 +37,8 @@ public class MyDatabase extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
+
+
     public void insertLop(String maLop, String tenLop, String siSo){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -47,17 +49,25 @@ public class MyDatabase extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void updateLop(String maLop, String tenLop, String siSo){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_TEN_LOP, tenLop);
+        values.put(KEY_SI_SO, siSo);
+        db.update(TABLE_NAME, values, KEY_MA_LOP + "=?", new String[]{maLop});
+        db.close();
+    }
+
     public void deleteLop(String maLop){
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NAME, KEY_MA_LOP + "=?", new String[] {maLop}); // ep kieu neu khac String
         db.close();
     }
 
-    public List<Lop> getAllLop(){
+    public List<Lop> readAllLop(){
         List<Lop> listLop = new ArrayList<>();
-        String query = String.format("SELECT * FROM " + TABLE_NAME);
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         cursor.moveToFirst();
 
         while (cursor.isAfterLast() == false){

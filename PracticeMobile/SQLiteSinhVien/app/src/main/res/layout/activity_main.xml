@@ -72,4 +72,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rcv_Lop" />
 
+    <Button
+        android:id="@+id/btn_sualop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="284dp"
+        android:layout_marginTop="124dp"
+        android:text="Sửa lớp "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rcv_Lop" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
