@@ -36,10 +36,9 @@ public class LopAdapter extends  RecyclerView.Adapter<LopAdapter.ViewHolder>{
             return;
         }
 
-        holder.tv_MaLop.setText(lop.getMalop().toString());
-        holder.tv_TenLop.setText(lop.getTenlop().toString());
+        holder.tv_MaLop.setText(lop.getMalop());
+        holder.tv_TenLop.setText(lop.getTenlop());
         holder.tv_SiSo.setText(lop.getSiso());
-
     }
 
     @Override
