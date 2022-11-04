@@ -1,7 +1,6 @@
 package com.example.sqlitesinhvien;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class LopAdapter extends  RecyclerView.Adapter<LopAdapter.ViewHolder>{
-    private List<Lop> list;
+    private List<SinhVien> list;
     private Context mcontext;
 
-    public LopAdapter(List<Lop> list, Context mcontext) {
+    public LopAdapter(List<SinhVien> list, Context mcontext) {
         this.list = list;
         this.mcontext = mcontext;
         notifyDataSetChanged();
@@ -31,14 +30,14 @@ public class LopAdapter extends  RecyclerView.Adapter<LopAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Lop lop = list.get(position);
-        if (lop == null){
+        SinhVien sinhVien = list.get(position);
+        if (sinhVien == null){
             return;
         }
 
-        holder.tv_MaLop.setText(lop.getMalop());
-        holder.tv_TenLop.setText(lop.getTenlop());
-        holder.tv_SiSo.setText(lop.getSiso());
+        holder.tv_MaLop.setText(sinhVien.getMaSV110());
+        holder.tv_TenLop.setText(sinhVien.getTenSV110());
+        holder.tv_SiSo.setText(sinhVien.getMota110());
     }
 
     @Override

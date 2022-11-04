@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv_Lop"
+        android:id="@+id/rcv_SV110"
         android:layout_width="390dp"
         android:layout_height="238dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,66 +20,66 @@
 
 
     <EditText
-        android:id="@+id/edt_malop"
+        android:id="@+id/edt_maSV110"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginTop="12dp"
-        android:hint="Nhập mã lớp"
+        android:hint="Nhập mã sinh viên"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcv_Lop" />
+        app:layout_constraintTop_toBottomOf="@+id/rcv_SV110" />
 
     <EditText
-        android:id="@+id/edt_siso"
+        android:id="@+id/edt_mota110"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginTop="124dp"
-        android:hint="Nhập sỉ số lớp"
+        android:hint="Nhập mô tả"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcv_Lop" />
+        app:layout_constraintTop_toBottomOf="@+id/rcv_SV110" />
 
     <EditText
-        android:id="@+id/edt_tenlop"
+        android:id="@+id/edt_tenSV110"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginTop="72dp"
-        android:hint="Nhập tên lớp"
+        android:hint="Nhập tên sinh viên"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcv_Lop" />
+        app:layout_constraintTop_toBottomOf="@+id/rcv_SV110" />
 
     <Button
-        android:id="@+id/btn_themlop"
+        android:id="@+id/btn_themSV110"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="4dp"
-        android:text="Thêm lớp "
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="220dp"
+        android:text="Thêm sinh viên "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcv_Lop" />
+        app:layout_constraintTop_toBottomOf="@+id/rcv_SV110" />
 
     <Button
-        android:id="@+id/btn_xoalop"
+        android:id="@+id/btn_xoaSV110"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="64dp"
-        android:text="Xóa lớp "
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="280dp"
+        android:text="Xóa sinh viên "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcv_Lop" />
+        app:layout_constraintTop_toBottomOf="@+id/rcv_SV110" />
 
     <Button
-        android:id="@+id/btn_sualop"
+        android:id="@+id/btn_suaSV110"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="124dp"
-        android:text="Sửa lớp "
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="340dp"
+        android:text="Sửa sinh viên "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcv_Lop" />
+        app:layout_constraintTop_toBottomOf="@+id/rcv_SV110" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
