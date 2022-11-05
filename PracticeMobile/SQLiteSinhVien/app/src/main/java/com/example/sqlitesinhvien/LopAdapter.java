@@ -45,6 +45,7 @@ public class LopAdapter extends  RecyclerView.Adapter<LopAdapter.ViewHolder>{
         if (list != null)
             return list.size();
         return 0;
+
     }
 
 
