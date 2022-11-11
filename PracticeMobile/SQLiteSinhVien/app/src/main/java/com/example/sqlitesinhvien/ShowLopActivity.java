@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -30,6 +31,8 @@ public class ShowLopActivity extends AppCompatActivity {
 
     private void intViewListener() {
         btn_themlop110 = findViewById(R.id.btn_themLop110);
+        btn_sualop110 = findViewById(R.id.btn_suaLop110);
+        btn_xoalop110 = findViewById(R.id.btn_xoaLop110);
         edt_maLop110 = findViewById(R.id.edt_maLop110);
         edt_tenLop110 = findViewById(R.id.edt_tenLop110);
         edt_siSoLop110 = findViewById(R.id.edt_siSoLop110);
@@ -39,7 +42,36 @@ public class ShowLopActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Lop lop = new Lop(edt_maLop110.getText().toString(), edt_tenLop110.getText().toString(), Integer.parseInt(edt_siSoLop110.getText().toString()));
-                myDatabase.insertLop(lop);
+                if (myDatabase.insertLop(lop) == -1){
+                    Toast.makeText(ShowLopActivity.this, "Error!!", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(ShowLopActivity.this, "Thêmm lớp thành công!", Toast.LENGTH_SHORT).show();
+                }
+                initView();
+            }
+        });
+
+        btn_sualop110.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Lop lop = new Lop(edt_maLop110.getText().toString(), edt_tenLop110.getText().toString(), Integer.parseInt(edt_siSoLop110.getText().toString()));
+                if(myDatabase.updateLop(lop) == -1){
+                    Toast.makeText(ShowLopActivity.this, "Error!!", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(ShowLopActivity.this, "Modified successful!", Toast.LENGTH_SHORT).show();
+                }
+                initView();
+            }
+        });
+
+        btn_xoalop110.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (myDatabase.deleteLop(edt_maLop110.getText().toString()) == -1) {
+                    Toast.makeText(ShowLopActivity.this, "Error!!", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(ShowLopActivity.this, "Deleted successful!", Toast.LENGTH_SHORT).show();
+                }
                 initView();
             }
         });

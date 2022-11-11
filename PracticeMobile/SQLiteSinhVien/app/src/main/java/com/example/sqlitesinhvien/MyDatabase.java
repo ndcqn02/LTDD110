@@ -107,14 +107,32 @@ public class MyDatabase extends SQLiteOpenHelper {
 
 
 
-    public void insertLop(Lop lop){
+    public long insertLop(Lop lop){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_MA_LOP, lop.getMalop());
         values.put(KEY_TEN_LOP,lop.getTenLop());
         values.put(KEY_SI_SO, lop.getSiSo());
-        db.insert(TABLE_NAME_LOP, null, values);
+        long result = db.insert(TABLE_NAME_LOP, null, values);
         db.close();
+        return result;
+    }
+
+    public long updateLop(Lop lop){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_TEN_LOP,lop.getTenLop());
+        values.put(KEY_SI_SO, lop.getSiSo());
+        long result = db.update(TABLE_NAME_LOP, values, KEY_MA_LOP + "=?", new String[]{lop.getMalop()});
+        db.close();
+        return result;
+    }
+
+    public long deleteLop(String maLop){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME_LOP, KEY_MA_LOP + "=?", new String[] {maLop}); // ep kieu neu khac String
+        db.close();
+        return result;
     }
 
     public List<Lop> readAllLop(){
