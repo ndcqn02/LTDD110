@@ -63,6 +63,7 @@ public class TruyenTranhAdapter extends ArrayAdapter<TruyenTranh> {
            tenTenTranh.setText(truyenTranh.getTenTruyen());
            tenTenChap.setText(truyenTranh.getTenChap());
            Glide.with(this.ct).load(truyenTranh.getLinkAnh()).into(imgAnhTruyen);  // load anh ve, load len imageview
+
        }
 
         return convertView;
