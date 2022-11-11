@@ -7,18 +7,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class LopAdapter extends  RecyclerView.Adapter<LopAdapter.ViewHolder>{
-    private List<SinhVien> list;
-    private Context mcontext;
+public class LopAdapter extends RecyclerView.Adapter<LopAdapter.ViewHolder> {
 
-    public LopAdapter(List<SinhVien> list, Context mcontext) {
-        this.list = list;
-        this.mcontext = mcontext;
-        notifyDataSetChanged();
+    private List<Lop> mlist;
+    private IclickItemRecyclerview iClickItemRecyclerview;
+
+    public LopAdapter(List<Lop> mlist, IclickItemRecyclerview iClickItemRecyclerview) {
+        this.mlist = mlist;
+        this.iClickItemRecyclerview = iClickItemRecyclerview;
     }
 
     @NonNull
@@ -30,37 +31,43 @@ public class LopAdapter extends  RecyclerView.Adapter<LopAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        SinhVien sinhVien = list.get(position);
-        if (sinhVien == null){
+        Lop lop = mlist.get(position);
+        if (lop == null){
             return;
         }
 
-        holder.tv_MaLop.setText(sinhVien.getMaSV110());
-        holder.tv_TenLop.setText(sinhVien.getTenSV110());
-        holder.tv_SiSo.setText(sinhVien.getMota110());
+        holder.tv_MaLop.setText(lop.getMalop());
+        holder.tv_TenLop.setText(lop.getTenLop());
+        holder.tv_SiSo.setText(String.valueOf(lop.getSiSo()));
+
+        holder.layout_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iClickItemRecyclerview.onClickItemLop(lop);
+            }
+        });
+
     }
 
     @Override
     public int getItemCount() {
-        if (list != null)
-            return list.size();
+        if(mlist != null){
+            return mlist.size();
+        }
         return 0;
-
     }
-
-
-
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView tv_TenLop;
         private TextView tv_MaLop;
         private TextView tv_SiSo;
+        private ConstraintLayout layout_item;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_MaLop = itemView.findViewById(R.id.tv_MaLop);
             tv_TenLop= itemView.findViewById(R.id.tv_TenLop);
             tv_SiSo= itemView.findViewById(R.id.tv_SiSo);
+            layout_item = itemView.findViewById(R.id.layout_item_lop);
         }
     }
-
 }
