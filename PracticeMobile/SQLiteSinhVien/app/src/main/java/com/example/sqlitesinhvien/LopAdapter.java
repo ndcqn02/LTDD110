@@ -62,6 +62,7 @@ public class LopAdapter extends RecyclerView.Adapter<LopAdapter.ViewHolder> {
         private TextView tv_MaLop;
         private TextView tv_SiSo;
         private ConstraintLayout layout_item;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_MaLop = itemView.findViewById(R.id.tv_MaLop);
