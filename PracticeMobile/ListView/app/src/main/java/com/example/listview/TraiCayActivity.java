@@ -22,8 +22,6 @@ public class TraiCayActivity extends AppCompatActivity {
         AnhXa();
         adapter = new TraiCayAdapter(this,R.layout.dong_trai_cay, arrayTraiCay );
         lvtraicay.setAdapter(adapter);
-
-
     }
 
 

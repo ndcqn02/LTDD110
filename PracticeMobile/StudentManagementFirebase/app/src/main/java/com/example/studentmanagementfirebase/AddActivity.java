@@ -61,10 +61,10 @@ public class AddActivity extends AppCompatActivity {
         edtAddImage = findViewById(R.id.edtAddImage);
 
         Map<String, Object> map = new HashMap<>();
-        map.put("id", edtAddId.getText().toString());
-        map.put("name", edtAddName.getText().toString());
-        map.put("description", edtAddDescription.getText().toString());
-        map.put("image", edtAddImage.getText().toString());
+        map.put("tenKhoaHoc", edtAddId.getText().toString());
+        map.put("tenThuongGoi", edtAddName.getText().toString());
+        map.put("dacTinh", edtAddDescription.getText().toString());
+        map.put("hinhAnh", edtAddImage.getText().toString());
 
 
         FirebaseDatabase.getInstance().getReference().child("students").push()

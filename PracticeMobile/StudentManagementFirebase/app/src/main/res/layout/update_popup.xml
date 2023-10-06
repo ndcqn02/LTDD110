@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtId"
+            android:id="@+id/hinhAnh"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtName"
+        android:id="@+id/edttenThuongGoi"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -39,12 +39,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtDescription"
+        android:id="@+id/edtdacTinh"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="216dp"
-        android:hint="Input description"
+        android:hint="Input dacTinh"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,7 +63,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="476dp"
         android:text="Update"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

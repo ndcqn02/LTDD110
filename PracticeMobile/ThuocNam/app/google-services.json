@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "145848142076",
+    "firebase_url": "https://thuocnam-ff614-default-rtdb.firebaseio.com",
+    "project_id": "thuocnam-ff614",
+    "storage_bucket": "thuocnam-ff614.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145848142076:android:cee2913549e5b5092eaf79",
+        "android_client_info": {
+          "package_name": "com.example.thuocnam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145848142076-4n76b6uif4rp5bjpdoraeqo4rrvc1gam.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAhbTJFsnDJ8l0Ee2Ra-xrKQdVFwUkKlI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145848142076-4n76b6uif4rp5bjpdoraeqo4rrvc1gam.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
